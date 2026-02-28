@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RestController  // For web requests
@@ -19,9 +21,21 @@ public class TestController {
     @Autowired
     private TestRepository testRepository; // to use testrepo methods
 
+    /**
+     * Method to get random booked tables.
+     * @return List of random tables which are booked.
+     */
     @GetMapping("/tests")
     public List<Test> fetchTest() {
-        return testRepository.findAll(); //returns a list of all tests
+        List<Test> allTables = testRepository.findAll(); //returns a list of all tests
+        Collections.shuffle(allTables);
+        int i = (int) Math.round(Math.random()*allTables.size());
+
+        List<Test> randomTables = new ArrayList<>();
+        for (int j = 0; j < i; j++) {
+            randomTables.add(allTables.get(j));
+        }
+        return randomTables;
     }
 
 }
