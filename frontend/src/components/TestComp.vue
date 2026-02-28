@@ -1,20 +1,9 @@
 <template>
-    <div class="container">
+    <div>
         <h1 class="text-center">ID tests</h1>
-        <table class="table table-striped">
-            <thead>
-                <th>ID</th>
-                <th>first name</th>
-                <th>last name</th>
-            </thead>
-            <tbody>
-                <tr v-for="test in tests" v-bind:key="test.id">
-                    <td>{{ test.id }}</td>
-                    <td>{{ test.firstName }}</td>
-                    <td>{{ test.lastName }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="containerPlan">
+            <p>test hello</p>
+        </div>
     </div>
 </template>
 
@@ -46,5 +35,12 @@ import testService from '@/services/testService';
 </script>
 
 <style scoped>
-
+.containerPlan {
+    height: 1000px;
+    width: 2300px;
+    background-image: url('../assets/floor_plan.png'); /* internet src: https://www.bacancytechnology.com/qanda/vue/use-background-images-in-vue-cli-3-with-style-tag*/
+    background-size: cover; 
+    background-repeat: no-repeat;
+    border: 1px solid red; 
+}
 </style>
