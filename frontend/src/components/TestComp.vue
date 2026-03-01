@@ -1,9 +1,14 @@
 <template>
     <div>
         <h1 class="text-center">ID tests</h1>
-        <div class="containerPlan">
-            <p>test hello</p>
-        </div>
+        <!-- <div class="containerPlan"> -->
+            <div class="con">
+                <p class="test" v-for="test in tests" v-bind:key="test.id">
+                        {{ test.id }}
+                    </p>
+            </div>
+                <!-- </div> -->
+
     </div>
 </template>
 
@@ -42,5 +47,19 @@ import testService from '@/services/testService';
     background-size: cover; 
     background-repeat: no-repeat;
     border: 1px solid red; 
+}
+
+.con {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px;
+}
+
+.test {
+    width: 600px;
+}
+
+#pos1 {
+
 }
 </style>

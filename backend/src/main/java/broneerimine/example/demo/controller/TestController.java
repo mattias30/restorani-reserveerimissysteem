@@ -26,7 +26,7 @@ public class TestController {
      * @return List of random tables which are booked.
      */
     @GetMapping("/tests")
-    public List<Test> fetchTest() {
+    public List<Test> fetchTest() {  // fetches booked
         List<Test> allTables = testRepository.findAll(); //returns a list of all tests
         Collections.shuffle(allTables);
         int i = (int) Math.round(Math.random()*allTables.size());
