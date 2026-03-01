@@ -1,7 +1,7 @@
 package broneerimine.example.demo;
 
-import broneerimine.example.demo.entity.Test;
-import broneerimine.example.demo.repository.TestRepository;
+import broneerimine.example.demo.entity.Seat;
+import broneerimine.example.demo.repository.SeatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,60 +15,86 @@ public class BackendApplication implements CommandLineRunner { // to run logic o
 	}
 
 	@Autowired
-	private TestRepository testRepository; // to use these methods here
+	private SeatRepository seatRepository; // to use these methods here
 
 	@Override
 	public void run(String... args) throws Exception { //runs once
 
-		Test t2f = Test.builder()
+		Seat t2f = Seat.builder()
 				.seatSize(2)
 				.booked(false)
 				.build();
 
-		Test t4f = Test.builder()
+		Seat t4f = Seat.builder()
 				.seatSize(4)
 				.booked(false)
 				.build();
 
-		Test t6f = Test.builder()
+		Seat t6f = Seat.builder()
 				.seatSize(6)
 				.booked(false)
 				.build();
 
-		Test t8f = Test.builder()
+		Seat t8f = Seat.builder()
 				.seatSize(8)
 				.booked(false)
 				.build();
 
-		Test t2t = Test.builder()
+		Seat t2t = Seat.builder()
 				.seatSize(2)
 				.booked(true)
 				.build();
 
-		Test t4t = Test.builder()
+		Seat t4t = Seat.builder()
 				.seatSize(4)
 				.booked(true)
 				.build();
 
-		Test t6t = Test.builder()
+		Seat t6t = Seat.builder()
 				.seatSize(6)
 				.booked(true)
 				.build();
 
-		Test t8t = Test.builder()
+		Seat t8t = Seat.builder()
 				.seatSize(8)
 				.booked(true)
 				.build();
+/**
+		Seat t8t = Seat.builder()
+				.seatSize(8)
+				.booked(true)
+				.build();
+
+		Seat t8t = Seat.builder()
+				.seatSize(8)
+				.booked(true)
+				.build();
+
+		Seat t8t = Seat.builder()
+				.seatSize(8)
+				.booked(true)
+				.build();
+
+		Seat t8t = Seat.builder()
+				.seatSize(8)
+				.booked(true)
+				.build();
+
+		Seat t8t = Seat.builder()
+				.seatSize(8)
+				.booked(true)
+				.build();
+ **/
 
 		// must save these to the repository (also saveAll, but must create a list first then)
-		testRepository.save(t2f);
-		testRepository.save(t4f);
-		testRepository.save(t6f);
-		testRepository.save(t8f);
-		testRepository.save(t2t);
-		testRepository.save(t4t);
-		testRepository.save(t6t);
-		testRepository.save(t8t);
+		seatRepository.save(t2f);
+		seatRepository.save(t4f);
+		seatRepository.save(t6f);
+		seatRepository.save(t8f);
+		seatRepository.save(t2t);
+		seatRepository.save(t4t);
+		seatRepository.save(t6t);
+		seatRepository.save(t8t);
 
 	}
 }

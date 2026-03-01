@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const TEST_API_BASE_URL = 'http://localhost:8080/api/tests'
+const TEST_API_BASE_URL = 'http://localhost:8080/api/seats'
 
 class TestService {
     getTests(){
